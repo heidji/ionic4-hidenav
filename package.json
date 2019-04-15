@@ -1,0 +1,15 @@
+{
+  "name": "ionic4-hidenav",
+  "version": "0.1.0",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
+  },
+  "dependencies": {
+    "jquery": "^3.4.0",
+    "@ionic-super-tabs/angular": "^6.0.0-beta.8"
+  },
+  "devDependencies": {
+    "@ionic/angular": "^4.0.0"
+  }
+}
