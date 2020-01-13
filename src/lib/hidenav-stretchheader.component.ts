@@ -30,6 +30,7 @@ import {HidenavShService} from './hidenav-sh-service.service';
             }
 
             :host {
+                padding-top:env(safe-area-inset-top);
                 z-index: 1;
             }
 
@@ -81,7 +82,7 @@ export class HidenavStretchheaderComponent implements OnInit, AfterViewInit {
             attributes: true,
         });
     }
-    
+
     start() {
         if(this.name) {
             if (typeof this.globals.data[this.name] == 'undefined' || this.globals.data[this.name] == null)

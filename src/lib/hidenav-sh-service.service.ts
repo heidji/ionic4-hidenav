@@ -196,7 +196,9 @@ export class HidenavShService {
                     let height = Math.max(Math.min(this.data[name].shrinkexpandHeight, this.data[name].shrinkexpandHeight - e.detail.scrollTop), this.data[name].shrinkexpandheaderHeight);
                     elem.style.transform = 'translate3d(0, ' + -(Math.min((this.data[name].shrinkexpandHeight - this.data[name].shrinkexpandheaderHeight) / 2, e.detail.scrollTop / 2)) + 'px, 0)';
                     parentElem.style.height = height + 'px';
-                    overlay.style.setProperty('--opacity', this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1));
+                    if(this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1) > 0){
+                        overlay.style.setProperty('--opacity', this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1));
+                    }
                     //event emitter
                     setTimeout(() => {
                         this.data[name].guardEvents = false;
@@ -283,7 +285,9 @@ export class HidenavShService {
                     let height = Math.max(Math.min(this.data[name].shrinkexpandHeight, this.data[name].shrinkexpandHeight - e.detail.scrollTop), this.data[name].shrinkexpandheaderHeight);
                     elem.style.transform = 'translate3d(0, ' + -(Math.min((this.data[name].shrinkexpandHeight - this.data[name].shrinkexpandheaderHeight) / 2, e.detail.scrollTop / 2)) + 'px, 0)';
                     parentElem.style.height = height + 'px';
-                    overlay.style.setProperty('--opacity', this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1));
+                    if(this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1) > 0){
+                        overlay.style.setProperty('--opacity', this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1));
+                    }
                     supertabsToolbar.style.transform = 'translate3d(0, ' + height + 'px, 0)';
                     //event emitter
                     setTimeout(() => {

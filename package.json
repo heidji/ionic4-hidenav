@@ -18,7 +18,7 @@
   "homepage": "https://github.com/heidji/ionic4-hidenav#readme",
   "dependencies": {
     "jquery": "^3.4.0",
-    "@ionic-super-tabs/angular": "^6.0.0-beta.8"
+    "@ionic-super-tabs/angular": "^6.1.2"
   },
   "devDependencies": {
     "@ionic/angular": "^4.0.0"
