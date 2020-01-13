@@ -24,21 +24,6 @@ _This plugin is also made as generic as possible, making it maybe a bit harder t
 npm i ionic4-hidenav
 ```
 
-#### Temporary setup requirement: 
-
-Please beware that in the used release of Supertabs (v6.0.0-beta.8) there is a [temporary setup requirement](https://github.com/zyra/ionic-super-tabs#temporary-installation-requirement) which requires you to edit the `tsconfig.json` file in the project root directory and add the following node:
-
-```json
-{
-//...
-"include": [
-    "src",
-    "node_modules/@ionic-super-tabs/core/dist/types/interface.d.ts"
-  ]
-  //...
-}
-```
-
 ## Implementation
 
 Create (or modify if you already have) a **shared.module.ts** in your project root folder:
@@ -209,5 +194,5 @@ As for the `<ion-content>` elements in each of the tabs give them the `hidenav-c
 **PS**.: as mentioned in the beginning, you should not use both methods (Part1 and Part2) together on one page. It was never tested and is not intended to be used.
 
 [npm-url]: https://npmjs.org/package/ionic4-hidenav
-[npm-image]: https://img.shields.io/badge/npm-0.1.3-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.1.4-green.svg
  
