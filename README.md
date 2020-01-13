@@ -209,5 +209,5 @@ As for the `<ion-content>` elements in each of the tabs give them the `hidenav-c
 **PS**.: as mentioned in the beginning, you should not use both methods (Part1 and Part2) together on one page. It was never tested and is not intended to be used.
 
 [npm-url]: https://npmjs.org/package/ionic4-hidenav
-[npm-image]: https://img.shields.io/badge/npm-0.1.2-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.1.3-green.svg
  
