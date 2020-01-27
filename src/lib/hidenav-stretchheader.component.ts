@@ -12,6 +12,7 @@ import {
 } from '@angular/core';
 import {HidenavShService} from './hidenav-sh-service.service';
 
+// @ts-ignore
 @Component({
     selector: 'hidenav-stretchheader',
     template: `
@@ -30,7 +31,6 @@ import {HidenavShService} from './hidenav-sh-service.service';
             }
 
             :host {
-                padding-top:env(safe-area-inset-top);
                 z-index: 1;
             }
 

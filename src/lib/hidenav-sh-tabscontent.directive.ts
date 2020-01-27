@@ -1,4 +1,4 @@
-import {Directive, Host, Self, Optional, ElementRef, ContentChild, forwardRef} from '@angular/core';
+import {Directive, Host, Self, Optional, ElementRef, ContentChild} from '@angular/core';
 import {IonContent} from '@ionic/angular';
 import {SuperTabs} from '@ionic-super-tabs/angular';
 import {HidenavShService} from './hidenav-sh-service.service';
@@ -10,9 +10,9 @@ import $ from 'jquery';
 export class HidenavShTabscontentDirective {
 
     name: any;
-    @ContentChild(forwardRef(() => SuperTabs)) supertabs: SuperTabs;
+    @ContentChild(SuperTabs) supertabs: SuperTabs;
 
-    constructor(@Host() @Self() @Optional() public el: IonContent, public contentElem: ElementRef, private globals: HidenavShService) {
+    constructor(public contentElem: ElementRef, @Host() @Self() @Optional() public el: IonContent, private globals: HidenavShService) {
 
     }
 
@@ -34,7 +34,7 @@ export class HidenavShTabscontentDirective {
                 let results = [];
                 for (let tab of tabs) {
                     let cont = tab.querySelector('ion-content');
-                    if (cont.attributes['hidenav-sh-content'])
+                    if (cont != null && typeof cont.attributes['hidenav-sh-content'] != 'undefined' && cont.attributes['hidenav-sh-content'].nodeValue != '')
                         results.push(cont.attributes['hidenav-sh-content'].nodeValue);
                     else
                         results.push(null);

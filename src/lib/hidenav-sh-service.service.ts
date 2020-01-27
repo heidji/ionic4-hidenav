@@ -67,7 +67,8 @@ export class HidenavShService {
                 let elem = header.nativeElement;
                 if (parentElem.getAttribute('init-expanded') == 'true')
                     this.data[name].initExpanded = true;
-                this.data[name].shrinkexpandheaderHeight = parseInt(parentElem.getAttribute('header-height'), 10);
+                let notchHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--ion-safe-area-top"), 10);
+                this.data[name].shrinkexpandheaderHeight = parseInt(parentElem.getAttribute('header-height'), 10)+notchHeight;
                 this.data[name].opacityFactor = parseInt(parentElem.getAttribute('opacity-factor'), 10);
                 this.data[name].opacityColor = parentElem.getAttribute('opacity-color');
                 parentElem.style.height = this.data[name].shrinkexpandheaderHeight + 'px';
@@ -98,7 +99,8 @@ export class HidenavShService {
                     this.data[name].preserveHeader = true;
                     this.data[parent].preserveHeader = true;
                 }
-                this.data[name].shrinkexpandheaderHeight = parseInt(parentElem.getAttribute('header-height'), 10);
+                let notchHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue("--ion-safe-area-top"), 10);
+                this.data[name].shrinkexpandheaderHeight = parseInt(parentElem.getAttribute('header-height'), 10)+notchHeight;
                 this.data[name].opacityFactor = parseInt(parentElem.getAttribute('opacity-factor'), 10);
                 this.data[name].opacityColor = elem.getAttribute('opacity-color');
                 parentElem.style.height = this.data[name].shrinkexpandheaderHeight + 'px';
