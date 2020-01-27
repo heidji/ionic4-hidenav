@@ -12,7 +12,6 @@ import {
 } from '@angular/core';
 import {HidenavShService} from './hidenav-sh-service.service';
 
-// @ts-ignore
 @Component({
     selector: 'hidenav-stretchheader',
     template: `
@@ -31,6 +30,7 @@ import {HidenavShService} from './hidenav-sh-service.service';
             }
 
             :host {
+                --blur: 0;
                 z-index: 1;
             }
 
@@ -58,6 +58,7 @@ export class HidenavStretchheaderComponent implements OnInit, AfterViewInit {
     @Input('init-expanded') initExpanded: any;
     @Input('opacity-color') opacityColor: any;
     @Input('opacity-factor') opacityFactor: any;
+    @Input('blur-factor') blurFactor: any;
     @Input('preserve-header') preserveHeader: any;
 
     @Output() scroll: EventEmitter<number> = new EventEmitter<number>();

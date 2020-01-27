@@ -102,6 +102,7 @@ Inputs for `<hidenav-stretchheader>`:
 | `header-height`   | **required**                 | height to which the header shrinks to                                          |
 | `opacity-factor`  | optional / default = 0       | `1 - 10` opacity of shrunk header overlay                                      |
 | `opacity-color`   | optional / default = black   | accepts any css color description (name, rgb, # ..)                            |
+| `blur-factor`     | optional / default = 0       | the maximum blur when the header is collapsed (accepts integer)                |
 | `init-expanded`   | optional / default = false   | set to `true` if you want the header to initiate expanded                      |
 | `no-border`       | optional / default = false   | set to `true` if you want to remove the bottom styling of the header           |
 | Tabspage params only:                                                                                                             |
@@ -194,5 +195,5 @@ As for the `<ion-content>` elements in each of the tabs give them the `hidenav-c
 **PS**.: as mentioned in the beginning, you should not use both methods (Part1 and Part2) together on one page. It was never tested and is not intended to be used.
 
 [npm-url]: https://npmjs.org/package/ionic4-hidenav
-[npm-image]: https://img.shields.io/badge/npm-0.1.7-green.svg
+[npm-image]: https://img.shields.io/badge/npm-0.1.8-green.svg
  
