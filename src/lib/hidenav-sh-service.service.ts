@@ -204,14 +204,17 @@ export class HidenavShService {
                     let height = Math.max(Math.min(this.data[name].shrinkexpandHeight, this.data[name].shrinkexpandHeight - e.detail.scrollTop), this.data[name].shrinkexpandheaderHeight);
                     elem.style.transform = 'translate3d(0, ' + -(Math.min((this.data[name].shrinkexpandHeight - this.data[name].shrinkexpandheaderHeight) / 2, e.detail.scrollTop / 2)) + 'px, 0)';
                     parentElem.style.height = height + 'px';
-                    let currentValOpacity = overlay.style.getPropertyValue('--opacity');
-                    let newValOpacity = this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1);
-                    if(currentValOpacity != newValOpacity)
-                        overlay.style.setProperty('--opacity', newValOpacity);
-                    let currentValBlur = elem.style.getPropertyValue('--blur');
-                    let newValBlur = (this.data[name].blurFactor * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1))+'px';
-                    if(currentValBlur != newValBlur)
-                        elem.style.setProperty('--blur', newValBlur);
+                    let scrollFactor = Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1);
+                    if(scrollFactor >= 0){
+                        let currentValOpacity = overlay.style.getPropertyValue('--opacity');
+                        let newValOpacity = this.data[name].opacityFactor / 10 * scrollFactor;
+                        if(currentValOpacity != newValOpacity)
+                            overlay.style.setProperty('--opacity', newValOpacity);
+                        let currentValBlur = elem.style.getPropertyValue('--blur');
+                        let newValBlur = (this.data[name].blurFactor * scrollFactor)+'px';
+                        if(currentValBlur != newValBlur)
+                            elem.style.setProperty('--blur', newValBlur);
+                    }
                     //event emitter
                     setTimeout(() => {
                         this.data[name].guardEvents = false;
@@ -302,14 +305,17 @@ export class HidenavShService {
                     let height = Math.max(Math.min(this.data[name].shrinkexpandHeight, this.data[name].shrinkexpandHeight - e.detail.scrollTop), this.data[name].shrinkexpandheaderHeight);
                     elem.style.transform = 'translate3d(0, ' + -(Math.min((this.data[name].shrinkexpandHeight - this.data[name].shrinkexpandheaderHeight) / 2, e.detail.scrollTop / 2)) + 'px, 0)';
                     parentElem.style.height = height + 'px';
-                    let currentValOpacity = overlay.style.getPropertyValue('--opacity');
-                    let newValOpacity = this.data[name].opacityFactor / 10 * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1);
-                    if(currentValOpacity != newValOpacity)
-                        overlay.style.setProperty('--opacity', newValOpacity);
-                    let currentValBlur = elem.style.getPropertyValue('--blur');
-                    let newValBlur = (this.data[name].blurFactor * Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1))+'px';
-                    if(currentValBlur != newValBlur)
-                        elem.style.setProperty('--blur', newValBlur);
+                    let scrollFactor = Math.min(e.detail.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1);
+                    if(scrollFactor >= 0){
+                        let currentValOpacity = overlay.style.getPropertyValue('--opacity');
+                        let newValOpacity = this.data[name].opacityFactor / 10 * scrollFactor;
+                        if(currentValOpacity != newValOpacity)
+                            overlay.style.setProperty('--opacity', newValOpacity);
+                        let currentValBlur = elem.style.getPropertyValue('--blur');
+                        let newValBlur = (this.data[name].blurFactor * scrollFactor)+'px';
+                        if(currentValBlur != newValBlur)
+                            elem.style.setProperty('--blur', newValBlur);
+                    }
                     supertabsToolbar.style.transform = 'translate3d(0, ' + height + 'px, 0)';
                     //event emitter
                     setTimeout(() => {
