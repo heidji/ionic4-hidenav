@@ -76,7 +76,7 @@ export class HomePageModule {
 ## Part 1: Expansible header
 This is a custom component defined using this HTML tag:
 ```html
-<hidenav-stretchhheader></hidenav-stretchhheader>
+<hidenav-stretchheader></hidenav-stretchheader>
 ```
 This component must be defined outside of `<ion-content>` and comes with required and optional child DOM elements:
 
