@@ -360,6 +360,7 @@ export class HidenavShService {
             elem.style.transform = 'translate3d(0, ' + -(Math.min((this.data[name].shrinkexpandHeight - this.data[name].shrinkexpandheaderHeight) / 2, this.data[name].contentElem.scrollTop / 2)) + 'px, 0)';
             parentElem.style.height = height + 'px';
             overlay.style.setProperty('--opacity', this.data[name].opacityFactor / 10 * Math.min(this.data[name].contentElem.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1));
+            elem.style.setProperty('--blur', (this.data[name].blurFactor * Math.min(this.data[name].contentElem.scrollTop / (this.data[name].shrinkexpandHeight / 2), 1)) +'px');
             supertabsToolbar.style.transform = 'translate3d(0, ' + height + 'px, 0)';
             this.scroll.next({name: this.data[name].parent, height: height});
         }
