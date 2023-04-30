@@ -21,6 +21,6 @@
     "@ionic-super-tabs/angular": "^6.1.2"
   },
   "devDependencies": {
-    "@ionic/angular": "^4.0.0"
+    "@ionic/angular": "^4.11.13"
   }
 }
